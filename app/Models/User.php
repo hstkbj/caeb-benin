@@ -18,9 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'full_name',
         'email',
         'password',
+        'is_active',
+        'role_id',
+        'reset_code',
     ];
 
     /**
@@ -42,4 +45,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Un utilisateur appartient à un rôle
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    // Un utilisateur peut écrire plusieurs blogs
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
 }

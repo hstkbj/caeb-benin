@@ -12,14 +12,14 @@
 						<div class="footer-widget logo-widget">
                         	<div class="widget-content">
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/images/footer-logo.png" alt="" /></a>
+                                    <a href="index.html"><img src="/assets/images/logo2.png" width="100" alt="" /></a>
                                 </div>
-                                <div class="text">Lorem ipsum dolor amet consetetur adi pisicing elit sed eiusm tempor incididunt ut labore dolore magna aliqua enim ad minim veniam quis nostrud exercita.</div>
+                                <div class="text" style="text-align: justify;">Le Collectif d’Animation des Écoles du Bénin (CAEB) est une ONG créée en 1975, engagée dans la formation des éducateurs et la promotion du bien-être des communautés.</div>
                                 <ul class="social-links clearfix">
-                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                                    <li><a href="https://www.facebook.com/Conseildesactiviteseducativesdubenin?mibextid=ZbWKwL" target="_blank"><span class="fab fa-facebook-f"></span></a></li>
                                     <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-vimeo-v"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                                    <li><a href="https://youtube.com/@caeb-benin?si=LKL5pHZxbCWc_KDf" target="_blank"><span class="fab fa-youtube"></span></a></li>
                                 </ul>
                             </div>
 						</div>
@@ -29,14 +29,9 @@
                     <div class="column col-lg-3 col-md-6 col-sm-12">
 						<div class="footer-widget links-widget">
 							<div class="widget-content">
-								<h3>Services</h3>
+								<h3>Nos Domaine</h3>
                                 <ul>
-                                    <li><a href="#">Donate</a></li>
-                                    <li><a href="#">Sponsor</a></li>
-                                    <li><a href="#">Fundraise</a></li>
-                                    <li><a href="#">Volunteer</a></li>
-                                    <li><a href="#">Partner</a></li>
-                                    <li><a href="#">Jobs</a></li>
+                                    <li v-for="(domaine,index) in domaineData" :key="index"><RouterLink :to="`/domaine/${domaine.slug}`">{{ domaine.title }}</RouterLink></li>
                                 </ul>
 							</div>	
 						</div>
@@ -48,9 +43,9 @@
 							<div class="widget-content">
 								<h3>Contacts</h3>
 								<ul class="contact-info">
-                                	<li>Flat 20, Reynolds Neck, North Helenaville, FV77 8WS</li>
-                                    <li><a href="tel:+2(305)587-3407">+2(305) 587-3407</a></li>
-                                    <li><a href="mailto:info@chireno.com">info@loveuscharity.com</a></li>
+                                	<li>01 BP BP 1484 P/N PORTO NOVO – BENIN</li>
+                                    <li><a href="tel:+2290196474409">+229 019 647 4409/ 016 114 5396</a></li>
+                                    <li><a href="mailto:caeb@caeb-benin.com">caeb@caeb-benin.com</a></li>
                                 </ul>
 							</div>	
 						</div>
@@ -79,21 +74,6 @@
 					
 				</div>
                 
-                <div class="nav-box clearfix">
-                	<div class="inner clearfix">
-                    	<ul class="footer-nav clearfix">
-                        	<li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Causes</a></li>
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                        
-                        <div class="donate-link"><a href="donate.html" class="theme-btn btn-style-one"><span class="btn-title">Donate Now</span></a></div>
-                    </div>
-                </div>
-                
 			</div>
 		</div>
 		
@@ -103,10 +83,11 @@
 				
 				<!--Scroll to top-->
 				<div class="clearfix">
-                	<div class="copyright">LoveUs  &copy;  2019 All Right Reserved</div>
+                	<div class="copyright">CAEB  &copy;  2026 All Right Reserved</div>
                     <ul class="bottom-links">
                     	<li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="/admins" target="_blank">Admin</a></li>
                     </ul>
 				</div>
 			</div>
@@ -116,10 +97,35 @@
 
 </template>
 
-<script>
-export default {
+<script setup>
 
-}
+	const domaineData = [
+    {
+        icon: 'fa-light fa-graduation-cap',
+        slug: 'education',
+        title: 'Éducation',
+        description: "Faciliter l'accès à l'école et garantir une qualité d'enseignement optimale pour tous les enfants."
+    },
+    {
+        icon: 'fa-light fa-heartbeat',
+        slug: 'sante-petite-enfance',
+        title: 'Santé & Petite Enfance',
+        description: "Lutter contre la malnutrition et offrir un développement harmonieux aux enfants de 0 à 5 ans."
+    },
+    {
+        icon: 'fa-light fa-hands-helping',
+        slug: 'actions-sociales',
+        title: 'Actions sociales',
+        description: "Accompagner les communautés vulnérables vers l'autonomie et promouvoir une inclusion durable."
+    },
+    {
+        icon: 'fa-light fa-futbol',
+        slug: 'loisir',
+        title: 'Loisir',
+        description: "Promouvoir la citoyenneté active, la culture de la paix et des activités éducatives ludiques."
+    },
+];
+
 </script>
 
 <style>

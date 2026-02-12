@@ -11,7 +11,7 @@
                     <div class="content-box">
                         <h2>50 ans d'engagement pour l'éducation et le développement au Bénin </h2>
                         <div class="text">Depuis 1975, le CAEB accompagne les enfants, les jeunes et les femmes vers un avenir meilleur grâce à l'éducation et la formation. </div>
-                        <div class="btn-box"><a href="donate.html" class="theme-btn btn-style-one"><span class="btn-title">Faire un don</span></a></div>
+                        <div class="btn-box"><RouterLink to="/donate" class="theme-btn btn-style-one"><span class="btn-title">Faire un don</span></RouterLink></div>
                     </div>  
                 </div>
             </div>
@@ -33,7 +33,7 @@
                             <div class="sub-title">A propos de nous</div>
                             <h2>L'éducation au cœur de tout</h2>
                             <div class="text" style="text-align: justify;">Fondée en 1975, notre Organisation Non Gouvernementale est spécialisée dans la formation, l'éducation et l'éducation au développement. Notre mission est d'assurer la formation permanente des éducateurs pour la promotion et le bien-être des enfants, des femmes, des adolescents et des adultes. À travers des actions partenariales, nous créons et mettons en réseau des espaces éducatifs et sociaux où chacun peut apprendre et s'épanouir.</div>
-                            <div class="link-box clearfix"><a href="causes.html" class="theme-btn btn-style-one"><span class="btn-title">En savoir plus</span></a></div>
+                            <div class="link-box clearfix"><RouterLink to="/about" class="theme-btn btn-style-one"><span class="btn-title">En savoir plus</span></RouterLink></div>
                         </div>
                     </div>
                 </div>
@@ -63,44 +63,17 @@
         	<div class="row clearfix">
             
             	<!--Service Block-->
-                <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div v-for="(domain,index) in domaineData" :key="index" class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
                 	<div class="inner-box">
-                    	<div class="icon-box"><span class="fa-light fa-graduation-cap"></span></div>
-                        <h3>Éducation</h3>
-                        <div class="text">Nous facilitons l'accès à l'école, améliorons la qualité de l'enseignement et formons les jeunes.</div>
-                    </div>
-                </div>
-                
-                <!--Service Block-->
-                <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                	<div class="inner-box">
-                    	<div class="icon-box"><span class="fa-light fa-heartbeat"></span></div>
-                        <h3>Santé & Petite Enfance</h3>
-                        <div class="text">Nous luttons contre la malnutrition et développons des programmes pour la petite enfance de 0 à 5 ans.</div>
-                    </div>
-                </div>
-                
-                <!--Service Block-->
-                <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                	<div class="inner-box">
-                    	<div class="icon-box"><span class="fa-light fa-hands-helping"></span></div>
-                        <h3>Actions sociales</h3>
-                        <div class="text">Nous accompagnons les communautés vulnérables vers l'autonomie et l'inclusion sociale durable.</div>
-                    </div>
-                </div>
-                
-                <!--Service Block-->
-                <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                	<div class="inner-box">
-                    	<div class="icon-box"><span class="fa-light fa-futbol"></span></div>
-                        <h3>Loisir</h3>
-                        <div class="text">Nous promouvons la citoyenneté, la culture de la paix et les activités éducatives ludiques.</div>
+                    	<div class="icon-box"><span :class="domain.icon"></span></div>
+                        <RouterLink :to="'/domaine/'+domain.slug"><h3 class="text-dark">{{ domain.title }}</h3></RouterLink>
+                        <div class="text">{{ domain.description }}</div>
                     </div>
                 </div>
                 
             </div>
             
-            <div class="bottom-image"><img src="assets/images/resource/services-bottom-image.png" alt=""></div>
+            <!-- <div class="bottom-image"><img src="assets/images/resource/services-bottom-image.png" alt=""></div> -->
             
         </div>
     </section>
@@ -169,6 +142,27 @@
       </div>
     </section>
     <!-- End Funfacts Section -->
+
+    <!-- Sponsors / Partners Section -->
+    <section class="sponsors-section py-5">
+        <div class="auto-container">
+            <div class="sec-title centered">
+                <div class="sub-title">Partenaires</div>
+                <h2>Nos partenaires</h2>
+                <div class="text">Nous travaillons avec des organisations engagées pour l'éducation et le développement.
+                </div>
+            </div>
+
+            <div class="sponsors-carousel owl-carousel owl-theme">
+                <figure class="sponsor-item"><a href="#"><img src="assets/images/clients/client-1.png"
+                            alt="Partenaire 1"></a></figure>
+                <figure class="sponsor-item"><a href="#"><img src="assets/images/clients/client-2.png"
+                            alt="Partenaire 2"></a></figure>
+                <figure class="sponsor-item"><a href="#"><img src="assets/images/clients/client-3.jpg"
+                            alt="Partenaire 3"></a></figure>
+            </div>
+        </div>
+    </section>
 
     <!--Upcoming Events Section-->
     <section class="upcoming-events py-5 ">
@@ -274,7 +268,7 @@
                 <div class="sec-title centered">
                     <h2>Agissez avec nous</h2>
                     <div class="text">Chaque enfant mérite une chance. Votre soutien permet de scolariser, former et accompagner des milliers de jeunes vers un avenir digne. </div>
-                    <div class="link-box clearfix"><a href="causes.html" class="theme-btn btn-style-three"><span class="btn-title">Faire un don</span></a></div>
+                    <div class="link-box clearfix"><RouterLink to="/donate" class="theme-btn btn-style-three"><span class="btn-title">Faire un don</span></RouterLink></div>
                 </div>
             </div>
         </div>
@@ -469,12 +463,54 @@
 
 </template>
 
-<script>
-export default {
+<script setup>
 
-}
+const domaineData = [
+    {
+        icon: 'fa-light fa-graduation-cap',
+        slug: 'education',
+        title: 'Éducation',
+        description: "Faciliter l'accès à l'école et garantir une qualité d'enseignement optimale pour tous les enfants."
+    },
+    {
+        icon: 'fa-light fa-heartbeat',
+        slug: 'sante-petite-enfance',
+        title: 'Santé & Petite Enfance',
+        description: "Lutter contre la malnutrition et offrir un développement harmonieux aux enfants de 0 à 5 ans."
+    },
+    {
+        icon: 'fa-light fa-hands-helping',
+        slug: 'actions-sociales',
+        title: 'Actions sociales',
+        description: "Accompagner les communautés vulnérables vers l'autonomie et promouvoir une inclusion durable."
+    },
+    {
+        icon: 'fa-light fa-futbol',
+        slug: 'loisir',
+        title: 'Loisir',
+        description: "Promouvoir la citoyenneté active, la culture de la paix et des activités éducatives ludiques."
+    },
+];
+
 </script>
 
 <style>
+
+.sponsor-item a{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.sponsor-item a img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
 
 </style>

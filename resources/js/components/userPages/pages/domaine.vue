@@ -41,7 +41,7 @@
                 
             </div>
             
-            <div class="bottom-image"><img src="assets/images/resource/services-bottom-image.png" alt=""></div>
+            <!-- <div class="bottom-image"><img src="assets/images/resource/services-bottom-image.png" alt=""></div> -->
             
         </div>
     </section>

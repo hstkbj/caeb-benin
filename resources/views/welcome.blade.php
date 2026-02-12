@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>CAEB - Bénin</title>
+        <title>CAEB - Conseil des Activités Educatives du Bénin</title>
 
         <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
@@ -13,8 +13,8 @@
         <!-- Color File -->
         <link href="{{asset('assets/css/color.css')}}" rel="stylesheet">
 
-        <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
-        <link rel="icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{asset('assets/images/favicon2.png')}}" type="image/x-icon">
+        <link rel="icon" href="{{asset('assets/images/favicon2.png')}}" type="image/x-icon">
 
         <link
             rel="stylesheet"
