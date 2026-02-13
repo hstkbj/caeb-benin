@@ -19,7 +19,13 @@
             <div class="card p-3">
 
                 <div class="card-body">
-                    
+
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div class=""></div>
+                        <button class="btn btn-primary"><i class="fas fa-plus me-2"></i> Ajouter un catégorie</button>
+                    </div>
+
+                    <DataTable/>
                 </div>
 
             </div>

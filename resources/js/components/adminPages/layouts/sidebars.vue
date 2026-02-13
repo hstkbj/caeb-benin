@@ -85,7 +85,31 @@
                 <li class="side-nav-item" :class="{ active: $route.path === '/admins/category' }">
                     <RouterLink to="/admins/category" class="side-nav-link">
                         <span class="menu-icon"><i class="fa-light fa-list"></i></span>
-                        <span class="menu-text" data-lang="dashboards">Catégory</span>
+                        <span class="menu-text" data-lang="dashboards">Catégories</span>
+                    </RouterLink>
+                </li>
+                <li class="side-nav-item" :class="{ active: $route.path === '/admins/blogs' }">
+                    <RouterLink to="/admins/blogs" class="side-nav-link">
+                        <span class="menu-icon"><i class="fa-light fa-newspaper"></i></span>
+                        <span class="menu-text" data-lang="dashboards">Actualités</span>
+                    </RouterLink>
+                </li>
+                <li class="side-nav-item" :class="{ active: $route.path === '/admins/events' }">
+                    <RouterLink to="/admins/events" class="side-nav-link">
+                        <span class="menu-icon"><i class="fa-light fa-calendar"></i></span>
+                        <span class="menu-text" data-lang="dashboards">Evènements</span>
+                    </RouterLink>
+                </li>
+                <li class="side-nav-item" :class="{ active: $route.path === '/admins/donates' }">
+                    <RouterLink to="/admins/donates" class="side-nav-link">
+                        <span class="menu-icon"><i class="fa-light fa-donate"></i></span>
+                        <span class="menu-text" data-lang="dashboards">Don</span>
+                    </RouterLink>
+                </li>
+                <li class="side-nav-item" :class="{ active: $route.path === '/admins/role' }">
+                    <RouterLink to="/admins/role" class="side-nav-link">
+                        <span class="menu-icon"><i class="fa-light fa-shield"></i></span>
+                        <span class="menu-text" data-lang="dashboards">Role & Permission</span>
                     </RouterLink>
                 </li>
             </ul>

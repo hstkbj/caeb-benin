@@ -53,6 +53,22 @@ const routes = [
           path:'category',
           component: ()=>import('../components/adminPages/pages/category.vue')
         },
+        {
+          path:'blogs',
+          component: ()=>import('../components/adminPages/pages/blog.vue')
+        },
+        {
+          path:'events',
+          component: ()=>import('../components/adminPages/pages/event.vue')
+        },
+        {
+          path:'donates',
+          component: ()=>import('../components/adminPages/pages/donate.vue')
+        },
+        {
+          path:'role',
+          component: ()=>import('../components/adminPages/pages/role.vue')
+        },
       ]
     },
     {
