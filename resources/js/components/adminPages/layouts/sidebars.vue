@@ -76,13 +76,18 @@
         <!--- Sidenav Menu -->
         <div id="sidenav-menu">
             <ul class="side-nav">
-                <li class="side-nav-item active">
+                <li class="side-nav-item" :class="{ active: $route.path === '/admins' }">
                     <RouterLink to="/admins" class="side-nav-link">
-                        <span class="menu-icon"><i class="ti ti-dashboard"></i></span>
-                        <span class="menu-text" data-lang="dashboards">Dashboards</span>
+                        <span class="menu-icon"><i class="fa-light fa-gauge"></i></span>
+                        <span class="menu-text" data-lang="dashboards">Tableau de bord</span>
                     </RouterLink>
                 </li>
-                
+                <li class="side-nav-item" :class="{ active: $route.path === '/admins/category' }">
+                    <RouterLink to="/admins/category" class="side-nav-link">
+                        <span class="menu-icon"><i class="fa-light fa-list"></i></span>
+                        <span class="menu-text" data-lang="dashboards">Catégory</span>
+                    </RouterLink>
+                </li>
             </ul>
         </div>
     </div>
