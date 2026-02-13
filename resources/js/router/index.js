@@ -69,6 +69,10 @@ const routes = [
           path:'role',
           component: ()=>import('../components/adminPages/pages/role.vue')
         },
+        {
+          path:'users',
+          component: ()=>import('../components/adminPages/pages/users.vue')
+        },
       ]
     },
     {

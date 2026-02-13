@@ -112,6 +112,12 @@
                         <span class="menu-text" data-lang="dashboards">Role & Permission</span>
                     </RouterLink>
                 </li>
+                <li class="side-nav-item" :class="{ active: $route.path === '/admins/users' }">
+                    <RouterLink to="/admins/users" class="side-nav-link">
+                        <span class="menu-icon"><i class="fa-light fa-users"></i></span>
+                        <span class="menu-text" data-lang="dashboards">Utilisateurs</span>
+                    </RouterLink>
+                </li>
             </ul>
         </div>
     </div>
